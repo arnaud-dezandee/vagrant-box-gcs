@@ -1,0 +1,13 @@
+_yardoc
+.bundle
+.config
+.solargraph.yml
+.vagrant
+.yardoc
+*.gem
+*.rbc
+bin/
+coverage/
+doc/
+Gemfile.lock
+pkg/

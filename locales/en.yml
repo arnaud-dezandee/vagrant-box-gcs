@@ -1,0 +1,12 @@
+en:
+  vagrant_box_gcs:
+    errors:
+      credentials: |-
+        BoxGCS: Credentials error
+            %{name}: %{message}
+      missing_file: |-
+        BoxGCS: Missing file error
+            %{message}
+      unauthorized: |-
+        BoxGCS: %{code} %{name}
+            %{message}
