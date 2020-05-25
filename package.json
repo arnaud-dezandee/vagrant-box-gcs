@@ -1,0 +1,40 @@
+{
+  "name": "vagrant-box-gcs",
+  "version": "0.0.0-dev",
+  "description": "Vagrant plugin to download boxes from Google GCS.",
+  "author": "Arnaud Dezandee <dezandee.arnaud@gmail.com> (https://github.com/arnaud-dezandee)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arnaud-dezandee/vagrant-box-gcs.git"
+  },
+  "devDependencies": {
+    "@semantic-release/error": "2.2.0",
+    "@semantic-release/exec": "5.0.0",
+    "execa": "4.0.2",
+    "semantic-release": "17.0.8"
+  },
+  "release": {
+    "branches": [
+      "master"
+    ],
+    "tagFormat": "v${version}",
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "./tools/rubygems.js",
+        {
+          "versionFile": "lib/vagrant-box-gcs/version.rb",
+          "gemspec": "vagrant-box-gcs.gemspec"
+        }
+      ],
+      [
+        "@semantic-release/github",
+        {
+          "assets": "vagrant-box-gcs-*.gem"
+        }
+      ]
+    ]
+  }
+}
