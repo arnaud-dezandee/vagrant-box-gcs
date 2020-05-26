@@ -14,15 +14,15 @@ $ vagrant plugin install vagrant-box-gcs
 
 Only the `gs://` protocol shorthand is supported
 
-The plugin supports fetching compatible metadata file of structured boxes repository
+The plugin supports fetching compatible manifest file of versioned boxes repository. See [packer-vagrant-box-gcs](https://github.com/arnaud-dezandee/packer-vagrant-box-gcs) to create one.
 
-#### From metadata box:
+#### From versioned box:
 
 ```bash
-$ vagrant box add gs://my-bucket/my-org/my-box-metadata.json
+$ vagrant box add gs://my-bucket/my-org/my-box-manifest.json
 ```
 
-The `box update` command line is available when using metadata
+The `box update` command line is available when using manifest
 ```bash
 $ vagrant box update --box my-org/my-box
 ```
@@ -31,7 +31,7 @@ $ vagrant box update --box my-org/my-box
 # Vagrantfile
 Vagrant.configure('2') do |config|
   config.vm.box     = 'my-org/my-box'
-  config.vm.box_url = 'gs://my-bucket/my-org/my-box-metadata.json'
+  config.vm.box_url = 'gs://my-bucket/my-org/my-box-manifest.json'
 end
 ```
 
@@ -88,3 +88,7 @@ Vagrant.configure('2') do |config|
   # ...
 end
 ```
+
+## Related
+
+- [packer-vagrant-box-gcs](https://github.com/arnaud-dezandee/packer-vagrant-box-gcs) - Packer plugin to upload Vagrant boxes to Google GCS.
