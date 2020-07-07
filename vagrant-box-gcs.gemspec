@@ -15,5 +15,6 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   gem.required_ruby_version = ">= 2.4"
+  gem.add_dependency 'digest-crc', '~> 0.5.1'
   gem.add_dependency "google-cloud-storage", "~> 1.26.1"
 end
